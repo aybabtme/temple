@@ -17,10 +17,12 @@ var (
 	appname = "temple"
 	usage   = "renders Go template on the command line"
 
-	srcFlag = cli.StringFlag{Name: "src", Usage: "if specified, a source file to read the template from"}
-	dstFlag = cli.StringFlag{Name: "dst", Usage: "if specified, a destination file to write the rendered template to"}
-	varFlag = cli.StringSliceFlag{Name: "var", Usage: "key=values to interpolate in the source template"}
+	srcFlag   = cli.StringFlag{Name: "src", Usage: "if specified, a source file to read the template from"}
+	dstFlag   = cli.StringFlag{Name: "dst", Usage: "if specified, a destination file to write the rendered template to"}
+	varFlag   = cli.StringSliceFlag{Name: "var", Usage: "key=values to interpolate in the source template"}
+	debugFlag = cli.BoolFlag{Name: "d", Usage: "debug, prints debug information to stderr"}
 
+	D            bool
 	templateText string
 	dst          io.WriteCloser = os.Stdout
 	vars                        = map[string]string{}
@@ -46,8 +48,11 @@ func newApp() *cli.App {
 	app.Usage = usage
 	app.Version = version
 
-	app.Flags = []cli.Flag{srcFlag, dstFlag, varFlag}
+	app.Flags = []cli.Flag{srcFlag, dstFlag, varFlag, debugFlag}
 	app.Before = func(ctx *cli.Context) error {
+
+		D = ctx.GlobalBool(debugFlag.Name)
+
 		var src io.Reader = os.Stdin
 		if srcFile := ctx.GlobalString(srcFlag.Name); srcFile != "" {
 			fd, err := os.Open(srcFile)
@@ -103,6 +108,9 @@ func parseVars(vars []string) (map[string]string, error) {
 			return nil, fmt.Errorf("duplicated key: %q already has a value", key)
 		}
 		out[key] = value
+		if D {
+			log.Printf("%q=%q", key, value)
+		}
 	}
 	return out, nil
 }
