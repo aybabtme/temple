@@ -7,13 +7,13 @@ Template rendering command line tool. The command line is your temple.
 ## linux
 
 ```bash
-wget -qO- https://github.com/aybabtme/temple/releases/download/{{version}}/temple_linux.tar.gz | tar xvz
+wget -qO- https://github.com/aybabtme/temple/releases/download/{{.version}}/temple_linux.tar.gz | tar xvz
 ```
 
 ## darwin
 
 ```bash
-wget -qO- https://github.com/aybabtme/temple/releases/download/{{version}}/temple_linux.tar.gz | tar xvz
+wget -qO- https://github.com/aybabtme/temple/releases/download/{{.version}}/temple_darwin.tar.gz | tar xvz
 ```
 
 # usage

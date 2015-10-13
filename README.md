@@ -13,7 +13,7 @@ wget -qO- https://github.com/aybabtme/temple/releases/download/0.1/temple_linux.
 ## darwin
 
 ```bash
-wget -qO- https://github.com/aybabtme/temple/releases/download/0.1/temple_linux.tar.gz | tar xvz
+wget -qO- https://github.com/aybabtme/temple/releases/download/0.1/temple_darwin.tar.gz | tar xvz
 ```
 
 # usage
@@ -31,3 +31,5 @@ temple < cfg.tpl.json > /etc/service/cfg.json -var "thread_count=9000"
 # license
 
 MIT
+
+
