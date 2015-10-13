@@ -48,3 +48,5 @@ hub release create \
     -a /tmp/temple_build/temple_linux.tar.gz \
     -a /tmp/temple_build/temple_darwin.tar.gz \
     $VERSION
+
+git push origin master
