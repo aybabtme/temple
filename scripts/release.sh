@@ -34,7 +34,7 @@ pushd /tmp/temple_build/darwin/
 tar cvzf /tmp/temple_build/temple_darwin.tar.gz temple
 popd
 
-go run ../main.go < README.tmpl.md > ../README.md -var "version=$VERSION"
+go run ../main.go file < README.tmpl.md > ../README.md -var "version=$VERSION"
 git add ../README.md
 git commit -m 'release bump'
 
