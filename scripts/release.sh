@@ -18,12 +18,6 @@ if [ "$VERSION" = "" ]; then
     usage
 fi
 
-MSG="${*:2}"
-if [ "$MSG" = "" ]; then
-    echo "Need to specify a release message!"
-    usage
-fi
-
 set -u -e
 
 rm -rf /tmp/temple_build/
