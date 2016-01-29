@@ -244,7 +244,7 @@ func treeCmd() cli.Command {
 
 				tmpl, err := template.New("").Parse(string(templateText))
 				if err != nil {
-					log.Fatalf("can't parse template: %v", err)
+					log.Fatalf("can't parse template %q: %v", src, err)
 				}
 
 				flags := os.O_CREATE | os.O_WRONLY
