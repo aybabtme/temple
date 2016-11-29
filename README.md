@@ -12,13 +12,13 @@ $ echo '{"hello": "{{.who}}"}' | temple -var who=world
 ### linux
 
 ```bash
-wget -qO- https://github.com/aybabtme/temple/releases/download/0.2.1/temple_linux.tar.gz | tar xvz
+wget -qO- https://github.com/aybabtme/temple/releases/download/0.2.2/temple_linux.tar.gz | tar xvz
 ```
 
 ### darwin
 
 ```bash
-wget -qO- https://github.com/aybabtme/temple/releases/download/0.2.1/temple_darwin.tar.gz | tar xvz
+wget -qO- https://github.com/aybabtme/temple/releases/download/0.2.2/temple_darwin.tar.gz | tar xvz
 ```
 
 ## contribution ideas
