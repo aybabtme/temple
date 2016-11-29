@@ -1,0 +1,3 @@
+package: github.com/aybabtme/temple
+import:
+- package: github.com/urfave/cli

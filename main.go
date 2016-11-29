@@ -12,7 +12,7 @@ import (
 	"sync"
 	"text/template"
 
-	"github.com/codegangsta/cli"
+	"github.com/urfave/cli"
 )
 
 var (
@@ -120,7 +120,7 @@ func fileCmd() cli.Command {
 		return nil
 	}
 
-	action := func(ctx *cli.Context) {
+	action := func(ctx *cli.Context) error {
 		defer dst.Close()
 		tmpl, err := template.New("").Parse(templateText)
 		if err != nil {
@@ -129,6 +129,7 @@ func fileCmd() cli.Command {
 		if err := tmpl.Execute(dst, vars); err != nil {
 			log.Fatalf("can't render template: %v", err)
 		}
+		return nil
 	}
 	return cli.Command{
 		Flags:  []cli.Flag{varFlag, srcFlag, dstFlag},
@@ -205,7 +206,7 @@ func treeCmd() cli.Command {
 		})
 	}
 
-	action := func(ctx *cli.Context) {
+	action := func(ctx *cli.Context) error {
 
 		wg := new(sync.WaitGroup)
 		sem := make(chan struct{}, runtime.NumCPU())
@@ -267,6 +268,7 @@ func treeCmd() cli.Command {
 		if D {
 			log.Printf("rendered %d files", len(files))
 		}
+		return nil
 	}
 	return cli.Command{
 		Flags:       []cli.Flag{varFlag, srcFlag, dstFlag, overwriteFlag},
