@@ -12,8 +12,8 @@ $ echo '{"hello": "{{.who}}"}' | temple -var who=world
 ### Debian/Ubuntu
 
 ```bash
-wget -O https://github.com/aybabtme/temple/releases/download/v0.2.4/temple_0.2.4_linux_amd64.deb
-dpkg -i temple_0.2.4_linux_amd64.deb
+wget https://github.com/aybabtme/temple/releases/download/vundefined/temple_undefined_linux_amd64.deb
+dpkg -i temple_undefined_linux_amd64.deb
 ```
 
 ### darwin

@@ -12,7 +12,7 @@ $ echo '{"hello": "{{"{{"}}.who{{"}}"}}"}' | temple -var who=world
 ### Debian/Ubuntu
 
 ```bash
-wget -O https://github.com/aybabtme/temple/releases/download/v{{.version}}/temple_{{.version}}_linux_amd64.deb
+wget https://github.com/aybabtme/temple/releases/download/v{{.version}}/temple_{{.version}}_linux_amd64.deb
 dpkg -i temple_{{.version}}_linux_amd64.deb
 ```
 
