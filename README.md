@@ -9,16 +9,17 @@ $ echo '{"hello": "{{.who}}"}' | temple -var who=world
 
 ## installation
 
-### linux
+### Debian/Ubuntu
 
 ```bash
-wget -qO- https://github.com/aybabtme/temple/releases/download/0.2.2/temple_linux.tar.gz | tar xvz
+wget -O https://github.com/aybabtme/bitflip/releases/download/vv0.2.3/bitflip_v0.2.3_linux_amd64.deb
+dpkg -i bitflip_v0.2.3_linux_amd64.deb
 ```
 
 ### darwin
 
 ```bash
-wget -qO- https://github.com/aybabtme/temple/releases/download/0.2.2/temple_darwin.tar.gz | tar xvz
+brew install aybabtme/homebrew-tap/bitflip
 ```
 
 ## contribution ideas
