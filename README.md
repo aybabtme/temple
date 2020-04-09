@@ -12,8 +12,8 @@ $ echo '{"hello": "{{.who}}"}' | temple -var who=world
 ### Debian/Ubuntu
 
 ```bash
-wget -O https://github.com/aybabtme/bitflip/releases/download/vv0.2.3/bitflip_v0.2.3_linux_amd64.deb
-dpkg -i bitflip_v0.2.3_linux_amd64.deb
+wget -O https://github.com/aybabtme/bitflip/releases/download/v0.2.4/bitflip_0.2.4_linux_amd64.deb
+dpkg -i bitflip_0.2.4_linux_amd64.deb
 ```
 
 ### darwin
