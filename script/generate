@@ -5,7 +5,7 @@ set -Eeuo pipefail
 
 REPO=$(git rev-parse --show-toplevel)
 REVISION=$(git rev-parse HEAD)
-GIT_TAG=$(git name-rev --tags --name-only $REVISION | sed -e "s/^v//")
+GIT_TAG=${GIT_TAG-$(git name-rev --tags --name-only $REVISION | sed -e "s/^v//")}
 
 function main {
   require_is_installed 'temple' 'find how to install it at https://github.com/aybabtme/temple'
