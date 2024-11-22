@@ -19,7 +19,7 @@ dpkg -i temple_0.2.4_linux_amd64.deb
 ### darwin
 
 ```bash
-brew install aybabtme/homebrew-tap/bitflip
+brew install aybabtme/homebrew-tap/temple
 ```
 
 ## contribution ideas
